@@ -1,0 +1,306 @@
+html,
+body {
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+    font-family: 'Cano', sans-serif;
+}
+@font-face {
+    font-family: 'Cano', sans-serif;
+    src: url('assets/cano.ttf');
+  }
+#pa img {
+    width: 100px;
+    height: auto;
+    padding: 5px;
+    padding-bottom: 1px;
+    cursor: pointer;
+    float: left;
+    
+}
+#logo-text{
+    align-content: center;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
+    padding-top: 5px
+}
+#wrapper{
+    width: 50% !important;
+    width: 100%;
+}
+@media (max-width: 700px){
+    #wrapper{
+    width: 40% !important;
+
+}
+}
+@media (max-width: 530px){
+    #defaultCanvas0{
+        width: 100% !important;
+    height: 100% !important;
+    }
+    #sketch{
+        display: inline-flex !important;
+    }
+    #settings{
+        margin-top: 0px !important;
+    z-index: 2;
+    }
+}
+#preview-image {
+    width: calc(100vmin - 150px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+}
+#canvas-and-metadata {
+    
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    flex-direction: column-reverse;    
+}
+
+
+canvas {
+    z-index: -1;
+
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: 1vh solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1vh;
+    background: rgba(0, 0, 0, 0.4);
+
+}
+
+
+.loader {
+
+    top: 40%;
+    left: 85%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 90%;
+    background: -o-linear-gradient(285deg, rgba(100, 255, 100, 1) 0%, rgb(43, 113, 208) 60%, rgb(138, 185, 181) 98%, rgb(149, 207, 37) 100%);
+    background: linear-gradient(165deg, rgba(100, 255, 100, 1) 0%, rgb(43, 113, 208) 60%, rgb(138, 185, 181) 98%, rgb(149, 207, 37) 100%);
+    position: fixed;
+
+}
+
+.loader:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 90%;
+    border-bottom: 0 solid #ffffff05;
+
+
+    box-shadow:
+        0 -5px 10px 10px #ffffff40 inset,
+        0 -2px 7px 5px #ffffff50 inset,
+        0 -1px 2px #ffffff80 inset,
+        0 -2px 1px #ffffffBB inset,
+        0 2px 0px rgb(138, 185, 181),
+        0 1px 2px rgb(138, 185, 181),
+        0 2px 2px #ffffff90,
+        0 5px 7px #ffffff60,
+        0 5px 10px 10px #ffffff40;
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
+    -webkit-animation: 1s rotate linear infinite;
+    animation: 1s rotate linear infinite;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.loader p {
+    font-family: sans-serif;
+    position: fixed;
+    top: 20%;
+    left: 15%;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+.content {
+    -webkit-transform: scale3d(0.5);
+    transform: scale3d(0.5, 0.5, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -2;
+    
+}
+
+#settings button,
+input,
+select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 40px;
+    width: auto;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    
+}
+
+#settings button {
+    width: 40px;
+    background-color: #2a71d0;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+
+}
+
+#settings {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width:60px; 
+    height: 350px;
+    margin-top: 15vmin !important;
+    border-radius: 30px;
+    margin: 0 auto 10px;
+    flex-direction: column;
+    float: left;
+
+}
+
+#settings>* {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    background-color: #2a71d0;
+    border: none;
+    font-weight: 700;
+
+}
+
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  .modal {
+    font-family: sans-serif;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 500px;
+    height: 50vh;
+    min-height: 500px;
+    max-width: 80%;
+  }
+  
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    padding: 10px 15px;
+  }
+  
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
